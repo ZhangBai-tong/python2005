@@ -16,7 +16,7 @@
         </div>
         <div class="cart_course_list">
           <CartItem v-for="(course, index) in cart_list" :course="course" :key="index"
-                    @expire="expire" @update="cart_total_price"></CartItem>
+                    @expire="expire" @update="cart_total_price" @del_cor="del_cor"></CartItem>
         </div>
         <div class="cart_footer_row">
           <span class="cart_select"><label> <el-checkbox></el-checkbox> &nbsp;<span
@@ -51,6 +51,9 @@ export default {
     },
 
     expire:function (){
+      this.get_cart_list()
+    },
+    del_cor:function (){
       this.get_cart_list()
     },
     //计算购物车商品总价
