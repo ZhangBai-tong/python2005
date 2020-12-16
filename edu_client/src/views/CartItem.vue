@@ -77,6 +77,7 @@ export default {
       }).then(res => {
         console.log(res)
         this.is_show = false
+        this.$emit("del_cor")
       }).catch(error => {
         console.log(error)
       })
